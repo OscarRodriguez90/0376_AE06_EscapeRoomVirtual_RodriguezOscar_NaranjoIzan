@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Scaperoom2</h1>
+    <p>Encuentra el código para ingresar al siguiente nivel.</p>
     
     <form action="./proc/resolver.proc.php" method="POST">
 
