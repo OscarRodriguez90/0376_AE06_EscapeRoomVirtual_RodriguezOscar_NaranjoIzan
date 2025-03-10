@@ -6,7 +6,7 @@
     <title>Envio de datos</title>
 </head>
 <body>
-    <h1>Scaperoom</h1>
+    <h1>Scaperoom2</h1>
     
     <form action="./proc/resolver.proc.php" method="POST">
 
