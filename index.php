@@ -6,27 +6,12 @@
     <title>Envio de datos</title>
 </head>
 <body>
-    <h1>Primer acertijo</h1>
+    <h1>Scaperoom</h1>
     
     <form action="./proc/resolver.proc.php" method="POST">
 
-        <label for="tiempo">Siempre avanza, nunca retrocede, y cuando lo pierdes, no lo puedes recuperar. ¿Qué es?"</label>
-        <input type="text"  name="tiempo">
-        <input type="submit" name="index">
+        <input type="submit" name="pantalla0">
     </form>
-
-    <?php
-        if(isset($_GET['pista1'])) {
-            
-            echo "<p>Incorrecto. Pista: " . $_GET['pista1'] . "</p>"; 
-        }
-        if(isset($_GET['error'])) {
-            
-            echo "<p>Te has pasado de listo, calisto<p>"; 
-        }
-
-   ?>
-    
     
      
 </body>
