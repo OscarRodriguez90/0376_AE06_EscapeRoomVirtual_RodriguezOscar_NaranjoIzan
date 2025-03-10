@@ -10,9 +10,14 @@
     <p>Encuentra el código para ingresar al siguiente nivel.</p>
     
     <form action="./proc/resolver.proc.php" method="POST">
-
-        <input type="submit" name="pantalla0">
+    
+    <input type="hidden" name="index" value="1">
+    <button type="submit">Empieza el reto</button>
+        
     </form>
+    
+    
+</form>
     
      
 </body>
