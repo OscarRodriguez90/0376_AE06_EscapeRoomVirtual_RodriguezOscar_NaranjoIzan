@@ -14,7 +14,7 @@ session_start();
     <title>Escape Room - Tercer Acertijo</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
+<body class="pantalla-2">
 
     <div id="form-container">
         <h1>Tercer Acertijo</h1>
@@ -27,7 +27,7 @@ session_start();
 
         <?php
             if(isset($_GET['pista2'])) {
-                echo "<p class='pista'>Incorrecto. <br> Pista: " . $_GET['pista2'] . "</p>"; 
+                echo "<p class='hint'>Incorrecto. <br> Pista: " . $_GET['pista2'] . "</p>"; 
             }
         ?>
     </div>

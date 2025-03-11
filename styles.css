@@ -8,7 +8,7 @@
 
 /* Fondo de la página */
 body {
-    background-image: url('img/img_pant0.webp'); /* Ruta corregida */
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,7 +16,101 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
+
+.pantalla-index {
+    background-image: url('img/img_pant_index.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.pantalla-index h1 {
+    font-size: 50px;
+    color: #FFD700;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 15px;
+}
+
+.pantalla-index p {
+    font-size: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.pantalla-index form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pantalla-index button {
+    background: #FFA500;
+    color: #4A2800;
+    padding: 15px 30px;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.pantalla-index button:hover {
+    background: #FF8C00;
+    transform: scale(1.05);
+}
+
+
+.pantalla-0 {
+    background-image: url('img/img_pant0.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.pantalla-1 {
+    background-image: url('img/img_pant1.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.pantalla-2 {
+    background-image: url('img/img_pant2.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.pantalla-3 {
+    background-image: url('img/img_pant3.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.pantalla-4 {
+    background-image: url('img/img_pant4.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-direction: column;
+}
+
+
 
 /* Contenedor del acertijo */
 #form-container {
@@ -95,4 +189,60 @@ button:hover {
     margin-top: 10px;
     font-size: 16px;
     font-weight: bold;
+}
+
+.pantalla-4 h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.pantalla-4 a {
+    background: #FFD700;
+    color: #4A2800;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.pantalla-4 a:hover {
+    background: #FFA500;
+}
+
+
+/* Diseño responsive para pantallas menores a 700px */
+@media (max-width: 700px) {
+    body {
+        padding: 10px;
+        display: block;
+        height: auto;
+    }
+
+    #form-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .scroll-box {
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+    }
 }

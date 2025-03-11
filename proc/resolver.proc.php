@@ -1,18 +1,13 @@
 <?php 
 
-if(isset($_POST['index']) && $_SERVER["REQUEST_METHOD"] == 'POST'){
+if(isset($_POST['index'])){
     
     session_start();
     $_SESSION['pantalla0'] = "check";
     header('Location: ../views/pantalla0.php');
     exit(); 
 
-} else if (isset($_POST['index'])){
-
-    header('Location: ../index.php?pista1=Todos lo tenemos, pero nunca suficiente.');
-    exit();
-
-}if(isset($_POST['pantalla0']) && isset($_POST['tiempo']) && strtolower($_POST['tiempo']) == "tiempo" ){
+} if(isset($_POST['pantalla0']) && isset($_POST['tiempo']) && strtolower($_POST['tiempo']) == "tiempo" ){
     
     session_start();
     $_SESSION['pantalla1'] = "check";

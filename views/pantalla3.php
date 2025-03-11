@@ -6,32 +6,32 @@ session_start();
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Envio de datos</title>
+    <title>Escape Room - Cuarto Acertijo</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
-    <h1>Cuarto acertijo</h1>
-    
-    <form action="../proc/resolver.proc.php" method="POST">
+<body class="pantalla-3">
 
-        <label for="silencio">Si me nombras, desaparezco. ¿Qué soy?3</label>
-        <input type="text"  name="silencio">
-        <input type="submit" name="pantalla3">
-    </form>
+    <div id="form-container">
+        <h1>Cuarto Acertijo</h1>
 
-    <?php
-        if(isset($_GET['pista2'])) {
-            
-            echo "<p> Incorrecto. <br> Pista: " . $_GET['pista2'] . "</p>"; 
-        }
-   ?>
-     
-    
-    
+        <form action="../proc/resolver.proc.php" method="POST">
+            <label for="silencio">Si me nombras, desaparezco. ¿Qué soy?</label>
+            <input type="text" name="silencio">
+            <input type="submit" name="pantalla3" value="Enviar">
+        </form>
+
+        <?php
+            if (isset($_GET['pista2'])) {
+                echo "<p class='hint'>Incorrecto. <br> Pista: " . $_GET['pista2'] . "</p>"; 
+            }
+        ?>
+    </div>
+
 </body>
-
 </html>

@@ -1,9 +1,12 @@
 <?php
 session_start();
-    if (!($_SESSION["pantalla0"] == "check")){
-    header("Location: ../index.php?error=pillo");
-    }
 
+$pantalla_actual = 'pantalla0.php';
+
+if (!isset($_SESSION[$pantalla_actual]) || $_SESSION[$pantalla_actual] !== "check") {
+    header("Location: ../index.php?error=acceso_denegado");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +17,7 @@ session_start();
     <title>Escape Room - Acertijo</title>
     <link rel="stylesheet" href="../styles.css"> <!-- Ruta corregida -->
 </head>
-<body>
+<body class="pantalla-0">
 
     <div id="form-container">
         <h1>Primer Acertijo</h1>
