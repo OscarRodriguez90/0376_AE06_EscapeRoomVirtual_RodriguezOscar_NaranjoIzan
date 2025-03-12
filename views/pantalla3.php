@@ -1,11 +1,9 @@
 <?php
 session_start();
-    if (!($_SESSION["pantalla1"] == "check")){
+if (!($_SESSION["pantalla2"] == "check")) {
     header("Location: ../index.php?error=pillo");
-    }
-
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -21,14 +19,27 @@ session_start();
         <h1>Cuarto Acertijo</h1>
 
         <form action="../proc/resolver.proc.php" method="POST">
-            <label for="silencio">Si me nombras, desaparezco. ¿Qué soy?</label>
-            <input type="text" name="silencio">
+            <!-- Primer input: Riddle numérico complicado -->
+            <label for="riddle_numero">¿Cuántos segundos hay en 1 hora y 15 minutos?</label>
+            <input type="number" name="riddle_numero" placeholder="Ingresa tu respuesta en segundos" required>
+            <br><br>
+            
+            <!-- Segundo input: Palabra reversa -->
+            <label for="palabra_reversa">¿Qué palabra, al leerla al revés, se convierte en la misma palabra?</label>
+            <input type="text" name="palabra_reversa" placeholder="Ingresa tu respuesta" required>
+            <br><br>
+            
+            <!-- Tercer input: Problema lógico -->
+            <label for="problema_logico">Un hombre llega a un pueblo el 1 de enero y se va el 31 de diciembre. ¿Cuántos días pasa en ese pueblo?</label>
+            <input type="number" name="problema_logico" placeholder="Ingresa tu respuesta" required>
+            <br><br>
+
             <input type="submit" name="pantalla3" value="Enviar">
         </form>
 
         <?php
-            if (isset($_GET['pista2'])) {
-                echo "<p class='hint'>Incorrecto. <br> Pista: " . $_GET['pista2'] . "</p>"; 
+            if (isset($_GET['pista3'])) {
+                echo "<p class='hint'>Incorrecto. <br> " . $_GET['pista3'] . "</p>"; 
             }
         ?>
     </div>
