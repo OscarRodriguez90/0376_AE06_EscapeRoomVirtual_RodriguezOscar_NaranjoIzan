@@ -17,8 +17,7 @@
     
     <form action="./proc/resolver.proc.php" method="POST">
     
-    <input name="index">
-    <button type="submit">Empieza el reto</button>
+    <button type="submit" name="index">Empieza el reto</button>
         
     </form>
     

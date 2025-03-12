@@ -1,13 +1,11 @@
-<?php
-session_start();
+ <?php
+// session_start();
 
-$pantalla_actual = 'pantalla0.php';
-
-if (!isset($_SESSION[$pantalla_actual]) || $_SESSION[$pantalla_actual] !== "check") {
-    header("Location: ../index.php?error=acceso_denegado");
-    exit();
-}
-?>
+// if (!isset($_SESSION["pantalla0.php"]) || $_SESSION["pantalla0.php"] !== "check") {
+//     header("Location: ../index.php?error=acceso_denegado");
+//     exit();
+// }
+?> 
 
 <!DOCTYPE html>
 <html lang="es">
