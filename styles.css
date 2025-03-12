@@ -1,4 +1,4 @@
-/* Reset básico */
+    /* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -245,4 +245,20 @@ button:hover {
         width: 100%;
         padding: 10px;
     }
+}
+
+/* Estilos para los radio buttons en horizontal */
+.radio-container {
+    display: flex; /* Hace que los elementos hijos (los radio buttons) se alineen en una fila */
+    gap: 20px; /* Añade un espacio entre los radio buttons */
+    justify-content: center; /* Centra los radio buttons en el contenedor */
+}
+
+.radio-container input[type="radio"] {
+    margin-right: 5px; /* Da un pequeño espacio entre el radio button y su label */
+}
+
+.radio-container label {
+    font-size: 18px;
+    color: #000000; /* Ajusta el color según tu diseño */
 }
