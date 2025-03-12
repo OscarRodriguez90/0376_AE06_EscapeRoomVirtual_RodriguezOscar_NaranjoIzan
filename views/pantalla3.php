@@ -1,7 +1,8 @@
 <?php
 session_start();
-if (!($_SESSION["pantalla3"] == "check")) {
-    header("Location: ../index.php?error=pillo");
+if (!isset($_SESSION['pantalla2']) || $_SESSION['pantalla2'] !== "check") {
+    header("Location: ../index.php?error=acceso_denegado");
+    exit();
 }
 ?>
 

@@ -1,11 +1,10 @@
 <?php
 session_start();
-
-if (!isset($_SESSION["pantalla0"]) || $_SESSION["pantalla0"] !== "check") {
-    header("Location: ../index.php?error=acceso_denegado");
+if (!($_SESSION["pantalla0"] == "check")) {
+    header("Location: ../index.php?error=pillo");
     exit();
 }
-?> 
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -30,7 +29,7 @@ if (!isset($_SESSION["pantalla0"]) || $_SESSION["pantalla0"] !== "check") {
             <label for="número">¿Cuántas horas tiene un día?</label>
             <input type="number" name="número" placeholder="Ingresa el número de horas" required>
             
-            <br><br>
+            <br>
 
             <!-- Pregunta interactiva con radio buttons dispuestos horizontalmente -->
             <label>¿Qué es más pesado?</label><br>
@@ -45,7 +44,7 @@ if (!isset($_SESSION["pantalla0"]) || $_SESSION["pantalla0"] !== "check") {
                 <label for="igual">Son igual de pesados</label>
             </div>
 
-            <br><br>
+            <br>
 
             <input type="submit" value="Enviar" name="pantalla0">
         </form>

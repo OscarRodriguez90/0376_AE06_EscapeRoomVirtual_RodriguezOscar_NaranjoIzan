@@ -1,9 +1,11 @@
 <?php
 session_start();
-if (!($_SESSION["pantalla2"] == "check")){
-    header("Location: ../index.php?error=pillo");
+if (!isset($_SESSION['pantalla1']) || $_SESSION['pantalla1'] !== "check") {
+    header("Location: ../index.php?error=acceso_denegado");
+    exit();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -16,30 +18,24 @@ if (!($_SESSION["pantalla2"] == "check")){
 <body class="pantalla-2">
 
     <div id="form-container">
-        <h1>Segundo Acertijo</h1>
+        <h1>Tercer Acertijo</h1>
 
         <form action="../proc/resolver.proc.php" method="POST">
             <!-- Primer input: Nuevo acertijo complicado -->
             <label for="agujero">Cuanto más me quitas, más grande me vuelvo. ¿Qué soy?</label>
             <input type="text" name="agujero" placeholder="Ingresa tu respuesta" required>
             
-            <br><br>
+            <br>
             
             <!-- Segundo input: Un campo numérico -->
             <label for="numero">Cuántas letras tiene la palabra 'relámpago'?</label>
             <input type="number" name="numero" placeholder="Ingresa el número de letras" required>
             
-            <br><br>
+            <br>
 
             <!-- Tercer input: Un campo numérico para un cálculo matemático -->
             <label for="calculo">Si tienes 10 manzanas y le das 3 a un amigo, ¿cuántas te quedan?</label>
             <input type="number" name="calculo" placeholder="Ingresa tu respuesta" required>
-            
-            <br><br>
-
-            <!-- Cuarto input: Nueva pregunta difícil de ortografía -->
-            <label for="pregunta_ortografia">¿Cómo se escribe correctamente la palabra que describe el fenómeno en el que una persona pierde la capacidad de hablar debido a un daño cerebral?</label>
-            <input type="text" name="pregunta_ortografia" placeholder="Ingresa tu respuesta" required>
             
             <br><br>
 
@@ -48,7 +44,7 @@ if (!($_SESSION["pantalla2"] == "check")){
 
         <?php
             if(isset($_GET['pista2'])) {
-                echo "<p class='hint'>Incorrecto. <br> Pista: " . $_GET['pista2'] . "</p>"; 
+                echo "<p class='hint'>Incorrecto. <br> " . $_GET['pista2'] . "</p>"; 
             }
         ?>
     </div>

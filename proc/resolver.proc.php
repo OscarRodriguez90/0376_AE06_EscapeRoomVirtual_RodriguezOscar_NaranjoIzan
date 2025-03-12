@@ -28,15 +28,15 @@ if (isset($_POST['pantalla0'])) {
 
         // Pistas por cada respuesta incorrecta
         if ($respuesta_texto != $respuesta_correcta_texto) {
-            $pista .= "Pista para el acertijo: Este algo avanza con el tiempo, pero cuando lo pierdes no lo puedes recuperar. ";
+            $pista .= "Pista: Este algo siempre avanza, pero cuando lo pierdes no lo puedes recuperar. ";
         }
 
         if ($respuesta_numerica != $respuesta_correcta_numerica) {
-            $pista .= "Pista para la pregunta numérica: Si la mitad de un dia son 12 horas, ¡piensa en cuántas horas tiene un día completo! ";
+            $pista .= "Pista: Si la mitad de un dia son 12 horas, ¡piensa en cuántas horas tiene un día completo! ";
         }
 
         if ($respuesta_interactiva != $respuesta_correcta_interactiva) {
-            $pista .= "Pista para la pregunta interactiva: Un kilogramo de cualquier cosa pesa lo mismo que un kilogramo de otra cosa. ";
+            $pista .= "Pista: Un kilogramo de cualquier cosa pesa lo mismo que un kilogramo de otra cosa. ";
         }
 
         // Redirigimos con las pistas correspondientes
@@ -58,13 +58,13 @@ if (isset($_POST['pantalla1'])) {
     } else {
         $pista = "Pista: ";
         if ($math != "15") {
-            $pista .= "Sumar añade números, restar quita números. ";
+            $pista .= "Sumar añade números, restar quita números.";
         }
         if ($word != "sapo") {
-            $pista .= "Reordena estas letras: O, P, S, A (Es un animal). ";
+            $pista .= "Es un animal";
         }
         if ($select != "luna") {
-            $pista .= "No es el sol, pero brilla en la noche. ¿Qué será? ";
+            $pista .= "No es el sol, pero brilla en la noche";
         }
         header("Location: ../views/pantalla1.php?pista2=$pista");
         exit();
@@ -77,16 +77,15 @@ if (isset($_POST['pantalla2'])) {
     $respuesta_agujero = strtolower(trim($_POST['agujero'])); 
     $respuesta_numero = $_POST['numero']; 
     $respuesta_calculo = $_POST['calculo']; 
-    $respuesta_ortografia = strtolower(trim($_POST['pregunta_ortografia'])); 
 
     // Comprobamos las respuestas
     $respuesta_correcta_agujero = "agujero"; 
     $respuesta_correcta_numero = 9; 
     $respuesta_correcta_calculo = 7; 
-    $respuesta_correcta_ortografia = "afasia"; // Respuesta correcta de ortografía
+    
 
     // Verificamos las respuestas y damos pistas si es incorrecto
-    if ($respuesta_agujero == $respuesta_correcta_agujero && $respuesta_numero == $respuesta_correcta_numero && $respuesta_calculo == $respuesta_correcta_calculo && $respuesta_ortografia == $respuesta_correcta_ortografia) {
+    if ($respuesta_agujero == $respuesta_correcta_agujero && $respuesta_numero == $respuesta_correcta_numero && $respuesta_calculo == $respuesta_correcta_calculo) {
         $_SESSION['pantalla3'] = "check";
         header("Location: ../views/pantalla3.php");
         exit();
@@ -95,20 +94,17 @@ if (isset($_POST['pantalla2'])) {
         $pista = '';
 
         if ($respuesta_agujero != $respuesta_correcta_agujero) {
-            $pista .= "Pista para el acertijo: " . "A menudo se encuentra en las cosas que ves todos los días, pero no puedes tocarlas."; 
+            $pista .= "<br>Pista: " . "A menudo se encuentra en las cosas que ves todos los días, pero no puedes tocarlas."; 
         }
         
         if ($respuesta_numero != $respuesta_correcta_numero) {
-            $pista .= "<br>Pista para el número de letras en 'relámpago': " . "Es una palabra corta, pero con una gran carga de energía."; 
+            $pista .= "<br>Pista: " . "Cuenta de nuevo"; 
         }
 
         if ($respuesta_calculo != $respuesta_correcta_calculo) {
-            $pista .= "<br>Pista para el cálculo: " . "Si te quedan pocas, ¿cuántas te quedarían después de regalar algunas?"; 
+            $pista .= "<br>Pista: " . "Si las das, ahora tienes menos"; 
         }
 
-        if ($respuesta_ortografia != $respuesta_correcta_ortografia) {
-            $pista .= "<br>Pista para la ortografía: " . "Es un trastorno neurológico que afecta la capacidad de hablar, ¡pero no lleva tilde!"; 
-        }
 
         // Redirigimos con las pistas correspondientes
         header("Location: ../views/pantalla2.php?pista2=" . urlencode($pista));
@@ -149,7 +145,7 @@ if (isset($_POST['pantalla3'])) {
         }
 
         if ($palabra_reversa != $respuesta_correcta_palabra_reversa) {
-            $pista .= "Es una palabra que se lee igual al revés y al derecho. "; // Pista para la palabra reversa
+            $pista .= "Viene de la palabra Arena"; // Pista para la palabra reversa
         }
 
         if ($problema_logico != $respuesta_correcta_problema_logico) {
