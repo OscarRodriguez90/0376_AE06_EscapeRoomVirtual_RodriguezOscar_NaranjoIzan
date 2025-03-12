@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!($_SESSION["pantalla2"] == "check")){
+if(!($_SESSION["pantalla4"] == "check")){
     header("Location: ../index.php?error=pillo");
     
 }
