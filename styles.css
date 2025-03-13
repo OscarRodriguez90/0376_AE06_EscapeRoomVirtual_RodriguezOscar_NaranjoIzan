@@ -1,4 +1,4 @@
-    /* Reset básico */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +8,6 @@
 
 /* Fondo de la página */
 body {
-    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,14 +16,15 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    color: black; /* Cambio global para asegurar color de texto negro */
 }
 
+/* Fondo y estilos específicos para las pantallas */
 .pantalla-index {
     background-image: url('img/img_pant_index.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,71 +50,22 @@ body {
     margin-bottom: 20px;
 }
 
-.pantalla-index form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pantalla-index button {
-    background: #FFA500;
-    color: #4A2800;
-    padding: 15px 30px;
-    font-size: 22px;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-.pantalla-index button:hover {
-    background: #FF8C00;
-    transform: scale(1.05);
-}
-
-
-.pantalla-0 {
-    background-image: url('img/img_pant0.webp');
+/* Estilos de formulario */
+.pantalla-0, .pantalla-1, .pantalla-2, .pantalla-3, .pantalla-4 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.pantalla-1 {
-    background-image: url('img/img_pant1.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.pantalla-2 {
-    background-image: url('img/img_pant2.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.pantalla-3 {
-    background-image: url('img/img_pant3.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.pantalla-4 {
-    background-image: url('img/img_pant4.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    flex-direction: column;
-}
-
-
+.pantalla-0 { background-image: url('img/img_pant0.webp'); }
+.pantalla-1 { background-image: url('img/img_pant1.webp'); }
+.pantalla-2 { background-image: url('img/img_pant2.webp'); }
+.pantalla-3 { background-image: url('img/img_pant3.webp'); }
+.pantalla-4 { background-image: url('img/img_pant4.webp'); flex-direction: column; }
 
 /* Contenedor del acertijo */
 #form-container {
-    background: rgba(255, 255, 255, 0.8); /* Efecto pergamino translúcido */
+    background: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     width: 400px;
@@ -126,7 +77,7 @@ body {
 
 /* Efecto de pergamino */
 .scroll-box {
-    background: url('img/pergamino.png') no-repeat center center/cover; /* Ruta corregida */
+    background: url('img/pergamino.png') no-repeat center center/cover;
     width: 450px;
     padding: 40px;
     border-radius: 15px;
@@ -141,6 +92,7 @@ h1 {
     font-size: 28px;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: rgb(233, 132, 23); 
 }
 
 /* Estilos del formulario */
@@ -160,7 +112,6 @@ input {
     background: rgba(255, 255, 255, 0.8);
 }
 
-/* Botón estilo antiguo */
 button {
     background: #A0522D;
     color: white;
@@ -191,15 +142,19 @@ button:hover {
     font-weight: bold;
 }
 
+/* Pantalla 4 */
 .pantalla-4 h1 {
     font-size: 50px;
     margin-bottom: 20px;
     font-weight: bold;
+    color: #FFD700; /* Título de color dorado */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Sombra para darle estilo */
 }
 
+
 .pantalla-4 a {
-    background: #FFD700;
-    color: #4A2800;
+    background: #FFD700; /* Color dorado para el botón */
+    color: #4A2800; /* Color del texto del botón */
     padding: 15px 30px;
     border-radius: 10px;
     font-size: 20px;
@@ -210,55 +165,11 @@ button:hover {
 }
 
 .pantalla-4 a:hover {
-    background: #FFA500;
+    background: #FF8C00; /* Cambio de color en hover */
 }
-
 
 /* Diseño responsive para pantallas menores a 700px */
 @media (max-width: 700px) {
-    body {
-        padding: 10px;
-        display: block;
-        height: auto;
-    }
-
-    #form-container {
-        width: 100%;
-        padding: 15px;
-    }
-
-    .scroll-box {
-        width: 100%;
-        padding: 20px;
-        border-radius: 10px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    input {
-        width: 100%;
-    }
-
-    button {
-        width: 100%;
-        padding: 10px;
-    }
-}
-
-/* Estilos para los radio buttons en horizontal */
-.radio-container {
-    display: flex; /* Hace que los elementos hijos (los radio buttons) se alineen en una fila */
-    gap: 20px; /* Añade un espacio entre los radio buttons */
-    justify-content: center; /* Centra los radio buttons en el contenedor */
-}
-
-.radio-container input[type="radio"] {
-    margin-right: 5px; /* Da un pequeño espacio entre el radio button y su label */
-}
-
-.radio-container label {
-    font-size: 18px;
-    color: #000000; /* Ajusta el color según tu diseño */
+    body { padding: 10px; display: block; height: auto; }
+    #form-container, .scroll-box, input, button { width: 100%; }
 }

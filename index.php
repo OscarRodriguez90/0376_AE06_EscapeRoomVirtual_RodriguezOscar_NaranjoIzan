@@ -5,6 +5,8 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Envio de datos</title>
     <link rel="stylesheet" href="styles.css">
+    <i class="fa-solid fa-cat"></i>
+    <link rel="icon" href="../img/cat-solid.svg">
 </head>
 <body class="pantalla-index">
     <h1>La Maldición de la Pirámide</h1>

@@ -8,7 +8,7 @@ if (isset($_POST['index'])) {
     exit();
 }
 
-// Validación de la pantalla 0 (Acertijo 1)
+// Validación de la pantalla 0 
 if (isset($_POST['pantalla0'])) {
     $respuesta_texto = strtolower(trim($_POST['tiempo'])); 
     $respuesta_numerica = $_POST['número'];
@@ -45,7 +45,7 @@ if (isset($_POST['pantalla0'])) {
     }
 }
 
-// Validación de la pantalla 1 (Nuevo reto interactivo con 3 inputs)
+// Validación de la pantalla 1 
 if (isset($_POST['pantalla1'])) {
     $math = trim($_POST['math']); // Pregunta 1: Matemáticas
     $word = strtolower(trim($_POST['word'])); // Pregunta 2: Reordenar palabra
@@ -71,7 +71,7 @@ if (isset($_POST['pantalla1'])) {
     }
 }
 
-// Validación de la pantalla 2 (Acertijo clásico)
+// Validación de la pantalla 2 
 if (isset($_POST['pantalla2'])) {
     // Variables para las respuestas
     $respuesta_agujero = strtolower(trim($_POST['agujero'])); 
@@ -112,7 +112,7 @@ if (isset($_POST['pantalla2'])) {
     }
 }
 
-// Validación de la pantalla 3 (Acertijo modificado)
+// Validación de la pantalla 3 
 if (!isset($_SESSION["pantalla2"]) || $_SESSION["pantalla2"] !== "check") {
     header("Location: ../index.php?error=pillo");
     exit();
