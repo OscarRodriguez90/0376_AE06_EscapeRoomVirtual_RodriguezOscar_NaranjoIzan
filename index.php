@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head> 
@@ -25,6 +26,9 @@
     
     
 </form>
+    <?php if (isset($_GET['error'])): ?>
+            <p class="error text-danger mt-3">Te has pasado de listo, calisto ☝️🤓</p>
+        <?php endif; ?>
     
      
 </body>

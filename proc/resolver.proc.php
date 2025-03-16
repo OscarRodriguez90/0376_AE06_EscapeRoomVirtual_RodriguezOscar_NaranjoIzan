@@ -28,14 +28,17 @@ if (isset($_POST['pantalla0'])) {
 
         // Pistas por cada respuesta incorrecta
         if ($respuesta_texto != $respuesta_correcta_texto) {
+           
             $pista .= "Pista: Este algo siempre avanza, pero cuando lo pierdes no lo puedes recuperar. ";
         }
 
         if ($respuesta_numerica != $respuesta_correcta_numerica) {
+            
             $pista .= "Pista: Si la mitad de un dia son 12 horas, ¡piensa en cuántas horas tiene un día completo! ";
         }
 
         if ($respuesta_interactiva != $respuesta_correcta_interactiva) {
+
             $pista .= "Pista: Un kilogramo de cualquier cosa pesa lo mismo que un kilogramo de otra cosa. ";
         }
 
@@ -132,7 +135,7 @@ if (isset($_POST['pantalla3'])) {
     // Comprobamos las respuestas
     if ($riddle_numero == $respuesta_correcta_riddle_numero && $palabra_reversa == $respuesta_correcta_palabra_reversa && $problema_logico == $respuesta_correcta_problema_logico) {
         // Si todas las respuestas son correctas, pasamos a la siguiente pantalla
-        $_SESSION['pantalla3'] = "check";
+        $_SESSION['pantalla4'] = "check";
         header('Location: ../views/pantalla4.php');
         exit();
     } else {
